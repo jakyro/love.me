@@ -20,8 +20,8 @@ public class FirstTest {
     private final long WHILE_WAIT_TIME = 300;
 
     private static WebDriver driver;
-    private String email;
-    private String password;
+    private static String email;
+    private static String password;
 
     @BeforeClass
     public static void setConnection() throws MalformedURLException {
