@@ -27,10 +27,11 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="185" column="5" lean-forward="true" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
+            <state relative-caret-position="282">
+              <caret line="238" column="33" lean-forward="true" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1509246939943" expanded="true" signature="5148:6871" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,6 +46,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>50</find>
+    </findStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -58,6 +64,7 @@
         <option value="$PROJECT_DIR$/src/test/java/FirstTestCase.java" />
         <option value="$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Test.class" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.5.2/selenium-remote-driver-3.5.2.jar!/org/openqa/selenium/remote/RemoteWebDriver.class" />
         <option value="$PROJECT_DIR$/src/test/java/FirstTest.java" />
       </list>
     </option>
@@ -495,35 +502,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest - 2017.10.29 at 03h 21m 25s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 04h 39m 31s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 23m 38s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 04h 43m 33s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 25m 42s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 04h 47m 44s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 45m 32s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 04h 52m 35s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 45m 33s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 04h 58m 45s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 48m 30s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 05h 08m 01s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2017.10.29 at 03h 55m 47s.xml">
+    <history-entry file="FirstTest - 2017.10.29 at 05h 10m 21s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_test09_ValidateCreateAccount1 - 2017.10.29 at 03h 50m 27s.xml">
-      <configuration name="FirstTest.test09_ValidateCreateAccount1" configurationId="JUnit" />
+    <history-entry file="FirstTest - 2017.10.29 at 05h 13m 26s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_test09_ValidateCreateAccount1 - 2017.10.29 at 03h 51m 51s.xml">
-      <configuration name="FirstTest.test09_ValidateCreateAccount1" configurationId="JUnit" />
+    <history-entry file="FirstTest - 2017.10.29 at 05h 15m 40s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_test09_ValidateCreateAccount1 - 2017.10.29 at 03h 52m 59s.xml">
-      <configuration name="FirstTest.test09_ValidateCreateAccount1" configurationId="JUnit" />
+    <history-entry file="FirstTest - 2017.10.29 at 05h 17m 53s.xml">
+      <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -533,7 +540,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -639,18 +646,19 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.5.2/selenium-remote-driver-3.5.2.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="1405">
+          <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="185" column="5" lean-forward="true" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
+        <state relative-caret-position="282">
+          <caret line="238" column="33" lean-forward="true" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1509246939943" expanded="true" signature="5148:6871" ph="..." />
           </folding>
         </state>
       </provider>
