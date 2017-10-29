@@ -9,14 +9,17 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FirstTest {
 
-    private final long WHILE_WAIT_TIME = 1000;
+    private final long WHILE_WAIT_TIME = 300;
 
     private static WebDriver driver;
+    private String email;
+    private String password;
 
     @BeforeClass
     public static void setConnection() throws MalformedURLException {
@@ -26,6 +29,8 @@ public class FirstTest {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appPackage", "com.crunchyroll.crunchyroid");
         capabilities.setCapability("appActivity", "com.crunchyroll.crunchyroid.activities.SplashActivity");
+        capabilities.setCapability("unicodeKeyboard", true);
+        capabilities.setCapability("resetKeyboard", true);
         driver = new RemoteWebDriver(new URL("http://192.168.43.66:4723/wd/hub"), capabilities);
         System.out.println("Done");
     }
@@ -55,7 +60,7 @@ public class FirstTest {
             Thread.sleep(WHILE_WAIT_TIME);
         }
     }
-/*
+
     @Test
     public void test03_ValidateLoginEmail1() throws InterruptedException {
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
@@ -76,7 +81,7 @@ public class FirstTest {
     public void test04_ValidateLoginEmail2() throws InterruptedException {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("SomethingWrong");
+        emailField.sendKeys("SomethingWrongo");
         continueButton.click();
         do {
             Thread.sleep(WHILE_WAIT_TIME);
@@ -107,13 +112,13 @@ public class FirstTest {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
         }
     }
-*/
+
     @Test
     public void test06_ClickOnCreateAccount() {
         WebElement createBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/button_right_text"));
         createBtn.click();
     }
-/*
+
     @Test
     public void test07_ValidateCreateEmail1() throws InterruptedException {
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
@@ -147,7 +152,7 @@ public class FirstTest {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
         }
     }
-*/
+
     @Test
     public void test09_ValidateCreateAccount1() throws InterruptedException {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
@@ -160,13 +165,13 @@ public class FirstTest {
             Thread.sleep(WHILE_WAIT_TIME);
         } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
         Thread.sleep(WHILE_WAIT_TIME);
-        System.out.println(driver.findElements(By.id("android:id/message")).size());
         if (!driver.findElement(By.id("android:id/message")).getText().equals("Invalid email address. Please use a different one.")) {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
             fail();
         } else {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
         }
+        Thread.sleep(WHILE_WAIT_TIME);
     }
 
     @Test
@@ -174,14 +179,13 @@ public class FirstTest {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("something@very.correct");
-        passwordField.sendKeys("12"); // short password
+        emailField.sendKeys("something@veryy.correcte");
+        passwordField.sendKeys("1224"); // short password
         continueButton.click();
         do {
             Thread.sleep(WHILE_WAIT_TIME);
         } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
         Thread.sleep(WHILE_WAIT_TIME);
-        System.out.println(driver.findElement(By.id("android:id/message")).getText());
         if (!driver.findElement(By.id("android:id/message")).getText().equals("Please use a longer password.")) {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
             fail();
@@ -189,51 +193,147 @@ public class FirstTest {
             driver.findElement(By.id("android:id/button1")).click(); // click on back button
         }
     }
-/*
+
     @Test
     public void test11_ValidateCreateAccount3() throws InterruptedException {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("something@very.correct");
-        passwordField.sendKeys("a very good password");
+        this.email = new RandomString().getRandomEmail();
+        this.password = new RandomString().getRandomString(12);
+        System.out.println(email);
+        System.out.println(password);
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
         continueButton.click();
         do {
             Thread.sleep(WHILE_WAIT_TIME);
         } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
         Thread.sleep(WHILE_WAIT_TIME);
-    }
-*/
-    @Test
-    public void test12_ClickForgotPassword() {
-        // click on Log In
-        // click on Forgot my Password
+        driver.findElement(By.id("com.crunchyroll.crunchyroid:id/close")).click();
     }
 
-    @Test
-    public void test13_ValidateForgotEmail() {
-        // click on continue
-        // check if appropriate message appears
-        // write some invalid data
-        // check if appropriate message appears
-        // write some valid data
-        // check if appropriate message appears
 
-        // remember to open forgot password again
+    @Test
+    public void test12_LogoutButton() {
+        WebElement menu = driver.findElement(By.className("android.widget.ImageButton"));
+        menu.click();
+        WebElement userName = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_account"));
+        userName.click();
+        WebElement logout = driver.findElement(By.id("android:id/button1"));
+        logout.click();
     }
 
     @Test
-    public void test14_CancelClick() {
-        // click on cancel
-        // check if returned to previous window
+    public void test13_ClickForgotPassword() throws InterruptedException {
+        WebElement menu = driver.findElement(By.className("android.widget.ImageButton"));
+        menu.click();
+        WebElement loginBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_account_text"));
+        loginBtn.click();
+        while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/login_field")).size() == 0) {
+            Thread.sleep(WHILE_WAIT_TIME);
+        }
+        WebElement forgotBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/forgot_password_button"));
+        forgotBtn.click();
     }
 
     @Test
-    public void test15_LoginValidData() {
-        // write valid email
-        // write valid password
-        // which we used to register
-        // click on continue
+    public void test14_ValidateForgotEmail1() throws InterruptedException {
+        WebElement resetButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/reset_password"));
+        resetButton.click();
+        do {
+            Thread.sleep(WHILE_WAIT_TIME);
+        } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
+        Thread.sleep(WHILE_WAIT_TIME);
+        if (!driver.findElement(By.id("android:id/message")).getText().equals("You forgot to insert your Email.")) {
+            driver.findElement(By.id("android:id/button1")).click(); // click on back button
+            fail();
+        } else {
+            driver.findElement(By.id("android:id/reset_password")).click(); // click on back button
+        }
+    }
+
+    @Test
+    public void test15_ClickForgotPassword() {
+        WebElement forgotBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/forgot_password_button"));
+        forgotBtn.click();
+    }
+
+    @Test
+    public void test16_ValidateForgotEmail2() throws InterruptedException {
+        WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/email"));
+        WebElement resetBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/reset_password"));
+        emailField.sendKeys("SomethingWrong");
+        resetBtn.click();
+        do {
+            Thread.sleep(WHILE_WAIT_TIME);
+        } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
+        Thread.sleep(WHILE_WAIT_TIME);
+        if (!driver.findElement(By.id("android:id/message")).getText().equals("You inserted an invalid Email.")) {
+            driver.findElement(By.id("android:id/button1")).click(); // click on back button
+            fail();
+        } else {
+            driver.findElement(By.id("android:id/reset_password")).click(); // click on back button
+        }
+    }
+
+    @Test
+    public void test17_ClickForgotPassword() {
+        WebElement forgotBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/forgot_password_button"));
+        forgotBtn.click();
+    }
+
+    @Test
+    public void test18_ValidateForgotEmail3() throws InterruptedException {
+        WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/email"));
+        WebElement resetBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/reset_password"));
+        emailField.sendKeys(new RandomString().getRandomEmail());
+        resetBtn.click();
+        do {
+            Thread.sleep(WHILE_WAIT_TIME);
+        } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
+        Thread.sleep(WHILE_WAIT_TIME);
+        if (!driver.findElement(By.id("android:id/message")).getText().equals("A link was sent in your Inbox.")) {
+            driver.findElement(By.id("android:id/button1")).click(); // click on back button
+            fail();
+        } else {
+            driver.findElement(By.id("android:id/reset_password")).click(); // click on back button
+        }
+    }
+
+    @Test
+    public void test19_ClickForgotPassword() {
+        WebElement forgotBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/forgot_password_button"));
+        forgotBtn.click();
+    }
+
+    @Test
+    public void test20_CancelClick() {
+        WebElement cancelButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/cancel"));
+        cancelButton.click();
+        assertEquals(1, driver.findElements(By.id("com.crunchyroll.crunchyroid:id/continue_button")).size());
+    }
+
+    @Test
+    public void test21_LoginValidData() throws InterruptedException {
+        WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
+        WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
+        WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
+
+        System.out.println(this.email);
+        System.out.println(this.password);
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        do {
+            Thread.sleep(WHILE_WAIT_TIME);
+        } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
+        Thread.sleep(WHILE_WAIT_TIME);
+    }
+
+    @Test
+    public void test22_LogoutButton() {
+//        WebElement logout = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/logout_field"));
+//        logout.click();
     }
 
     private boolean isLoading() {
@@ -243,7 +343,7 @@ public class FirstTest {
 
     @AfterClass
     public static void End() throws InterruptedException {
-        Thread.sleep(10000);
-        driver.quit();
+//        Thread.sleep(10000);
+//        driver.quit();
     }
 }
