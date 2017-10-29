@@ -48,7 +48,7 @@ public class FirstTest {
 
     @Test
     public void test02_OpenLoginWindow() throws InterruptedException {
-        System.out.print("Login...");
+        System.out.println("Login...");
         if (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/just_explore")).size() == 1) {
             WebElement loginBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login"));
             loginBtn.click();
