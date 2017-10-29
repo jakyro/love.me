@@ -1,4 +1,4 @@
-/**
+package hack.love.me; /**
  * Created by chise on 29-Oct-17.
  */
 import java.util.Locale;

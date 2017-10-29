@@ -1,3 +1,5 @@
+package hack.love.me;
+
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
