@@ -27,11 +27,11 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/hack/love/me/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2465">
-              <caret line="119" column="109" lean-forward="true" selection-start-line="119" selection-start-column="109" selection-end-line="119" selection-end-column="109" />
+            <state relative-caret-position="255">
+              <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1509269163000" expanded="true" signature="5399:7122" ph="..." />
+                <marker date="1509270034250" expanded="true" signature="5407:7125" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,13 +42,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-                <element signature="e#854#855#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -205,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Compile">
+  <component name="RunManager" selected="Maven.Test">
     <configuration default="false" name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="loveme_app" />
@@ -489,6 +483,7 @@
             </option>
             <option name="goals">
               <list>
+                <option value="clean" />
                 <option value="test" />
               </list>
             </option>
@@ -620,7 +615,7 @@
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1509269163000" expanded="true" signature="5399:7122" ph="..." />
+            <marker date="1509270034250" expanded="true" signature="5407:7125" ph="..." />
           </folding>
         </state>
       </provider>
@@ -629,13 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -691,13 +680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -711,11 +694,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/hack/love/me/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2465">
-          <caret line="119" column="109" lean-forward="true" selection-start-line="119" selection-start-column="109" selection-end-line="119" selection-end-column="109" />
+        <state relative-caret-position="255">
+          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1509269163000" expanded="true" signature="5399:7122" ph="..." />
+            <marker date="1509270034250" expanded="true" signature="5407:7125" ph="..." />
           </folding>
         </state>
       </provider>

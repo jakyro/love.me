@@ -25,7 +25,7 @@ public class FirstTest {
 
     @BeforeClass
     public static void setConnection() throws MalformedURLException {
-        System.out.print("Creating connection...");
+        System.out.println("Creating connection...");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "SM-A320");
         capabilities.setCapability("platformName", "Android");
@@ -34,7 +34,7 @@ public class FirstTest {
         capabilities.setCapability("unicodeKeyboard", true);
         capabilities.setCapability("resetKeyboard", true);
         driver = new RemoteWebDriver(new URL("http://192.168.43.66:4723/wd/hub"), capabilities);
-        System.out.println("Done");
+        System.out.println("Connection Created");
     }
 
     @Test
@@ -48,7 +48,7 @@ public class FirstTest {
 
     @Test
     public void test02_OpenLoginWindow() throws InterruptedException {
-        System.out.println("Login...");
+        System.out.print("Login...");
         if (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/just_explore")).size() == 1) {
             WebElement loginBtn = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login"));
             loginBtn.click();
@@ -83,7 +83,7 @@ public class FirstTest {
     public void test04_ValidateLoginEmail2() throws InterruptedException {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("SomethingWrongo");
+        emailField.sendKeys("SmthWrong");
         continueButton.click();
         do {
             Thread.sleep(WHILE_WAIT_TIME);
@@ -141,7 +141,7 @@ public class FirstTest {
     public void test08_ValidateCreateEmail2() throws InterruptedException {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("something@very.correct");
+        emailField.sendKeys("smth@very.correct");
         continueButton.click();
         do {
             Thread.sleep(WHILE_WAIT_TIME);
@@ -160,7 +160,7 @@ public class FirstTest {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("SomethingWrong");
+        emailField.sendKeys("SmthWrong");
         passwordField.sendKeys("Also wrong");
         continueButton.click();
         do {
@@ -181,7 +181,7 @@ public class FirstTest {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        emailField.sendKeys("something@veryy.correcte");
+        emailField.sendKeys("smth@veryy.correcte");
         passwordField.sendKeys("1224"); // short password
         continueButton.click();
         do {
@@ -201,10 +201,10 @@ public class FirstTest {
         WebElement emailField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_field"));
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
-        this.email = new RandomString().getRandomEmail();
-        this.password = new RandomString().getRandomString(12);
-        System.out.println(email);
-        System.out.println(password);
+        email = new RandomString().getRandomEmail();
+        password = new RandomString().getRandomString(12);
+        System.out.println("Generated Email: " + email);
+        System.out.println("Generated Password: " + password);
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         continueButton.click();
@@ -322,20 +322,24 @@ public class FirstTest {
         WebElement passwordField = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/password_field"));
         WebElement continueButton = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/continue_button"));
 
-        System.out.println(this.email);
-        System.out.println(this.password);
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         do {
             Thread.sleep(WHILE_WAIT_TIME);
         } while (driver.findElements(By.id("com.crunchyroll.crunchyroid:id/loading_view")).size() > 0);
         Thread.sleep(WHILE_WAIT_TIME);
+        continueButton.click();
     }
 
     @Test
-    public void test22_LogoutButton() {
-//        WebElement logout = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/logout_field"));
-//        logout.click();
+    public void test22_LogoutButton() throws InterruptedException {
+        Thread.sleep(10000);
+        WebElement menu = driver.findElement(By.className("android.widget.ImageButton"));
+        menu.click();
+        WebElement userName = driver.findElement(By.id("com.crunchyroll.crunchyroid:id/login_account"));
+        userName.click();
+        WebElement logout = driver.findElement(By.id("android:id/button1"));
+        logout.click();
     }
 
     private boolean isLoading() {
@@ -345,7 +349,7 @@ public class FirstTest {
 
     @AfterClass
     public static void End() throws InterruptedException {
-//        Thread.sleep(10000);
-//        driver.quit();
+        Thread.sleep(10000);
+        driver.quit();
     }
 }
